@@ -1,0 +1,3 @@
+-Calcolo sessagesimale di un numero;
+-calcolo minimo comune multiplo(mcm) di un numero;
+-calcolo massimo comune divisore(MCD).
