@@ -1,81 +1,98 @@
 <html>
-<title>Sessagesimale, Minimo comune multiplo e Massimo comune divisore</title>
-<head></head>
-<body>
-<script>
-function Calcolo(x){
-var y = Math.ceil(x);
-var z = y-x;
-z = 1 - z;
-z = z * 100;
-z = Math.round(z);
-z = z / 100;
-return z;}
-				
-function Sessagesimale() {
-var a = Math.abs(eval(window.prompt("Inserisci numero decimale: ")));
-var b = Calcolo(a);
-a = Math.abs(a-b);
-b = b * 60;
-var c = Calcolo(b);
-b = Math.abs(b-c);
-c = c * 60;
-if (c===60){
-b++;c=0;}		   
-if (b===60){
-a++; b=0;}
+    <title>Sessagesimale, Minimo comune multiplo e Massimo comune divisore</title>
+        <head></head>
+            <body>
+                <script>
+		    
+		    function Calcolo(x)
+		    {
+	                var y = Math.ceil(x);
+			var z = y - x;
+			z = 1 - z;
+			z = z * 100;
+			z = Math.round(z);
+			z = z / 100;
+			return z;
+		    }
 			
-a = Math.round(a);
-b = Math.round(b);
-c = Math.round(c);
-alert(a+" gradi "+b+" ' "+c+"''");}
-		
-/*---------------------------------------------------------------------*/		
-		
-function MCD (m, n){
-if (n==0) return m;
-else return MCD (n, m%n);}
+	
+		    function Sessagesimale() 
+		    {
+		        var a = Math.abs(eval(window.prompt("Inserisci numero decimale: ")));
+			var b = Calcolo(a);
+			a = Math.abs(a - b);
+			b = b * 60;
+			var c = Calcolo(b);
+			b = Math.abs(b - c);
+			c = c * 60;
+			if (c === 60)
+			{
+			    b++;c = 0;
+			}		   
+			if (b === 60)
+			{
+			    a++; b = 0;
+			}
+			
+			a = Math.round(a);
+			b = Math.round(b);
+			c = Math.round(c);
+			alert(a+" gradi "+b+" ' "+c+"''");
+		    }
 				
-function Acquisizione_MCD(){
-var m=eval(window.prompt("Inserisci il primo numero intero: "));
-var n=eval(window.prompt("Inserisci il secondo numero intero: "));
-alert("Il massimo comune divisore e' "+MCD(m,n));
-}
-				 
-/*---------------------------------------------------------------------*/		
 		
-function Mcm(m,n){
-var i=1;
-return i=m*n/MCD(m,n);}
-function Acquisizione_mcm(){
-var m=eval(window.prompt("Inserisci il primo numero intero: "));
-var n=eval(window.prompt("Inserisci il secondo numero intero: "));
-alert("Il minimo comune multiplo e' "+Mcm(m,n));
-}
+		    function MCD (m, n)
+		    {
+		    if (n == 0) 
+			return m;
+		    else 
+			return MCD (n, m % n);
+		    }
+				
+
+		    function Acquisizione_MCD()
+		    {
+			var m = eval(window.prompt("Inserisci il primo numero intero: "));
+			var n = eval(window.prompt("Inserisci il secondo numero intero: "));
+			alert("Il massimo comune divisore e' "+MCD(m, n));
+		    }
+				 		
+		
+		    function Mcm(m, n)
+		    {
+			var i = 1;
+			return i = m * n / MCD(m, n);
+	            }
+
+
+		    function Acquisizione_mcm()
+		    {
+			var m = eval(window.prompt("Inserisci il primo numero intero: "));
+			var n = eval(window.prompt("Inserisci il secondo numero intero: "));
+			alert("Il minimo comune multiplo e' "+Mcm(m, n));
+		    }
+		
 	
-/*--------------------------------------------------------------------*/	
-	
-do{		
-var scelta=eval(window.prompt("Che vuoi calcolare?\n1. Sessagesimale\n2. Minimo comune multiplo \n3. Massimo comune divisore"));
-	
-switch (true){
-case scelta==1: Sessagesimale();
-break;
+		    do{		
+		          var scelta = eval(window.prompt("Che vuoi calcolare?\n1. Sessagesimale\n2. Minimo comune multiplo \n3. Massimo comune divisore"));
+		     	  switch (true)
+			  {
+			      case scelta == 1: Sessagesimale();
+			      break;
 	   
-case scelta==2: Acquisizione_mcm();
-break;
+			      case scelta == 2: Acquisizione_mcm();
+			      break;
 			   
-case scelta==3: Acquisizione_MCD();
-break;
+			      case scelta == 3: Acquisizione_MCD();
+			      break;
 			   
-default:
-alert("Errore!");
-break;}
+			      default:
+			      alert("Errore!");
+                              break;
+			  }
 			   
-var risp=prompt("Vuoi continuare? \nsi \nno ");
-		
-}
-while(risp=='si');
-</script>
-</body>
+			  var risp=prompt("Vuoi continuare? \nsi \nno ");
+		     }while(risp == 'si');
+        </script>
+    </body>
 </html>
